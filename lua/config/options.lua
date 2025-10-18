@@ -4,11 +4,18 @@
 local general = require("config.general")
 
 if general.is_windows() then
+  print("Configuring options for Windows")
   -- Windows 下使用 PowerShell 作为默认 shell
-  vim.opt.shell = "pwsh -NoLogo"
-  vim.opt.shellcmdflag = ""
-  vim.opt.shellquote = '"'
-  vim.opt.shellxquote = "`"
+  if vim.fn.executable("pwsh") == 1 then
+    vim.opt.shell = "pwsh -NoLogo"
+    vim.opt.shellcmdflag = ""
+    vim.opt.shellquote = '"'
+    vim.opt.shellxquote = "`"
+  end
+end
+
+if general.is_linux() then
+  print("Configuring options for Linux")
 end
 
 -- 设置系统剪贴板
