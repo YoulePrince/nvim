@@ -4,7 +4,7 @@
 local general = require("config.general")
 
 if general.is_windows() then
-  print("Configuring options for Windows")
+  -- print("Configuring options for Windows")
   -- Windows 下使用 PowerShell 作为默认 shell
   if vim.fn.executable("pwsh") == 1 then
     vim.opt.shell = "pwsh -NoLogo"

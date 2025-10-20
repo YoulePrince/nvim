@@ -6,7 +6,7 @@ end
 local general = require("config.general")
 
 -- 显示 Neovide 版本
-vim.print("Neovide version: " .. vim.g.neovide_version)
+-- vim.print("Neovide version: " .. vim.g.neovide_version)
 
 ------------------------ 显示 -----------------------
 -- 设置字体
