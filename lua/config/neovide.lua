@@ -87,6 +87,8 @@ vim.g.neovide_profiler = false
 -- 防止光标在不应该移动至命令行时闪烁
 vim.g.neovide_cursor_hack = false
 
+-- 关闭输入法
+vim.g.neovide_input_ime = false
 ------------------------ 光标 ------------------------
 -- 光标移动动画的时长(单位: 秒)
 vim.g.neovide_cursor_animation_length = 0.150
