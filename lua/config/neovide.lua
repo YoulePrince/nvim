@@ -27,10 +27,34 @@ vim.g.neovide_opacity = 0.9
 vim.g.neovide_normal_opacity = 0.9
 
 -- 窗口边距
-vim.g.neovide_padding_top = 0
+vim.g.neovide_padding_top = 10
 vim.g.neovide_padding_bottom = 0
 vim.g.neovide_padding_right = 0
 vim.g.neovide_padding_left = 0
+
+-- 设置标题栏的颜色紧跟主题 ( 仅限 windows 有效 )
+local normal_id = vim.api.nvim_get_hl_id_by_name("Normal")
+local normal_hl = vim.api.nvim_get_hl(0, { id = normal_id })
+local normal_bg = normal_hl.bg
+vim.g.neovide_title_background_color = string.format("%x", normal_bg)
+
+-- 设置标题栏字体为 cyan ( 仅限 windows 有效 )
+vim.g.neovide_title_text_color = "cyan"
+
+-- 设置窗口模糊
+vim.g.neovide_window_blurred = false
+
+-- 设置浮动窗口的阴影边框
+vim.g.neovide_floating_shadow = true
+vim.g.neovide_floating_z_height = 10
+vim.g.neovide_light_angle_degrees = 45
+vim.g.neovide_light_radius = 5
+
+-- 设置浮动窗口的圆角半径 ( 0.0 ~ 1.0 )
+vim.g.neovide_floating_corner_radius = 1.0
+
+-- 设置在窗口周围绘制灰色边框 ( 仅限 macOS 有效 )
+vim.g.neovide_show_border = true
 
 -- 位置动画时间
 vim.g.neovide_position_animation_length = 0.15
@@ -89,14 +113,15 @@ vim.g.neovide_cursor_hack = false
 
 -- 关闭输入法
 vim.g.neovide_input_ime = false
+
 ------------------------ 光标 ------------------------
 -- 光标移动动画的时长(单位: 秒)
 vim.g.neovide_cursor_animation_length = 0.150
 
--- 光标短距离(1-2字符)移动的动画时长(单位: 秒)
+-- 光标短距离 ( 1-2字符 ) 移动的动画时长 ( 单位: 秒 )
 vim.g.neovide_cursor_short_animation_length = 0.04
 
--- 光标尾迹长度(0.0-1.0)
+-- 光标尾迹长度 ( 0.0 ~ 1.0 )
 vim.g.neovide_cursor_trail_size = 1.0
 
 -- 抗锯齿
