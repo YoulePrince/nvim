@@ -161,3 +161,8 @@ vim.g.neovide_cursor_vfx_particle_phase = 1.5
 
 -- 光标粒子弯曲度, 适用于 "railgun"
 vim.g.neovide_cursor_vfx_particle_curl = 1.0
+
+------------------------ 快捷键 ------------------------
+vim.keymap.set("n", "<F11>", function()
+  vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+end)
