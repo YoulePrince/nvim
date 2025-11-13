@@ -165,4 +165,13 @@ vim.g.neovide_cursor_vfx_particle_curl = 1.0
 ------------------------ 快捷键 ------------------------
 vim.keymap.set("n", "<F11>", function()
   vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+  if vim.g.neovide_fullscreen then
+    general.neovide_opacity = vim.g.neovide_opacity
+    general.neovide_normal_opacity = vim.g.neovide_normal_opacity
+    vim.g.neovide_opacity = 1.0
+    vim.g.neovide_normal_opacity = 1.0
+  else
+    vim.g.neovide_opacity = general.neovide_opacity
+    vim.g.neovide_normal_opacity = general.neovide_normal_opacity
+  end
 end)
