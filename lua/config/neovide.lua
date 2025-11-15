@@ -10,7 +10,9 @@ local general = require("config.general")
 
 ------------------------ 显示 -----------------------
 -- 设置字体
-vim.o.guifont = "Cascadia Code NF:h14"
+if not general.is_macos() then
+  vim.o.guifont = "Cascadia Code NF:h14"
+end
 
 -- 控制行间距
 vim.opt.linespace = 0
@@ -23,8 +25,8 @@ vim.g.neovide_text_gamma = 0.0
 vim.g.neovide_text_contrast = 0.5
 
 -- 窗口透明度
-vim.g.neovide_opacity = 0.9
-vim.g.neovide_normal_opacity = 0.9
+vim.g.neovide_opacity = 0.95
+vim.g.neovide_normal_opacity = 0.95
 
 -- 窗口边距
 vim.g.neovide_padding_top = 10
